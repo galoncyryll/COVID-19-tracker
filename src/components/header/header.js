@@ -21,7 +21,7 @@ const GridHeader = (latest) => {
           <Image src="https://cdn.frankerfacez.com/emoticon/61496/4" size="small" verticalAlign='middle' />
           <Statistic color='green' inverted>
             <Statistic.Value>{recovered}</Statistic.Value>
-            <Statistic.Label>Survived</Statistic.Label>
+            <Statistic.Label>Recovered</Statistic.Label>
           </Statistic>
         </Grid.Column>
         <Grid.Column>
