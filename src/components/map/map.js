@@ -16,10 +16,6 @@ const calculateRadius = (cases, multiplier, min, max) => {
 const LeafletMap = ({ data: { confirmed } }) => {
   const position = [ 35.0000, 103.0000 ];
 
-  for (const i in confirmed.locations) {
-    console.log(confirmed.locations[i]);
-  }
-
   return (
     <div id="mapid">
       <Map center={position} zoom={4}>
