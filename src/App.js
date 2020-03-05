@@ -16,7 +16,6 @@ const App = () => {
     fetch('https://coronavirus-tracker-api.herokuapp.com/all')
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         setLatest(data.latest)
         setData(data);
         setLoading(false);
