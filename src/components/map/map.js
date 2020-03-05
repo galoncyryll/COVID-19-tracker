@@ -13,9 +13,8 @@ const calculateRadius = (cases, multiplier, min, max) => {
   return radius;
 }
 
-const LeafletMap = ({ data: { confirmed } }) => {
+const LeafletMap = ({ data: { confirmed, deaths, recovered } }) => {
   const position = [ 35.0000, 103.0000 ];
-
   return (
     <div id="mapid">
       <Map center={position} zoom={4}>
@@ -23,16 +22,19 @@ const LeafletMap = ({ data: { confirmed } }) => {
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {confirmed.locations.map(loc => (
+        {confirmed.locations.map((loc, i) => (
           <Circle
             center={[loc.coordinates.lat, loc.coordinates.long]}
             radius={calculateRadius(loc.latest, 25, 15000, 500000)}
             color="red"
+            key={i}
           >
             <Popup>
               <div>
                 <h3>{`${loc.province ? loc.province : 'Province not specified'}, ${loc.country}`}</h3>
                 <p>{`Confirmed Cases: ${loc.latest}`}</p>
+                <p>{`Deaths: ${deaths.locations[i].latest}`}</p>
+                <p>{`Recovered: ${recovered.locations[i].latest}`}</p>
               </div>
             </Popup>
           </Circle>
