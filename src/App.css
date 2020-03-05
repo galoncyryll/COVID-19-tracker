@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  min-height: 100vh;
 }
 .App-header {
   background-color: #282c34;
@@ -7,4 +8,17 @@
   font-size: calc(10px + 2vmin);
   color: white;
   padding-bottom: 3rem;
+}
+
+.leaflet-container {
+  width: 100%;
+  min-height: 80vh;
+}
+
+.github-link {
+  font-size: 2rem;
+}
+
+#mapid { 
+  min-height: 50vh;
 }

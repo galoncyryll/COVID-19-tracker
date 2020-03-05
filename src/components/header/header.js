@@ -5,28 +5,29 @@ import {
   Statistic 
 } from 'semantic-ui-react';
 
-const GridHeader = () => {
+const GridHeader = (latest) => {
+  const { confirmed, deaths, recovered } = latest.latest
   return (
     <Grid columns={3} divided>
       <Grid.Row>
         <Grid.Column>
           <Image src="https://cdn.frankerfacez.com/emoticon/434366/4" size="small" verticalAlign='middle' />
           <Statistic color='yellow' inverted>
-            <Statistic.Value>28</Statistic.Value>
+            <Statistic.Value>{confirmed}</Statistic.Value>
             <Statistic.Label>Confirmed Cases</Statistic.Label>
           </Statistic>
         </Grid.Column>
         <Grid.Column>
           <Image src="https://cdn.frankerfacez.com/emoticon/61496/4" size="small" verticalAlign='middle' />
           <Statistic color='green' inverted>
-            <Statistic.Value>28</Statistic.Value>
+            <Statistic.Value>{recovered}</Statistic.Value>
             <Statistic.Label>Survived</Statistic.Label>
           </Statistic>
         </Grid.Column>
         <Grid.Column>
-          <Image src="https://cdn.frankerfacez.com/emoticon/425196/4" size="small" verticalAlign='middle' />
+          <Image src="https://cdn.frankerfacez.com/emoticon/425799/4" size="small" verticalAlign='middle' />
           <Statistic color='red' inverted>
-            <Statistic.Value>28</Statistic.Value>
+            <Statistic.Value>{deaths}</Statistic.Value>
             <Statistic.Label>Deaths</Statistic.Label>
           </Statistic>
         </Grid.Column>
