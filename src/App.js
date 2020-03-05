@@ -5,6 +5,7 @@ import { Menu } from 'semantic-ui-react';
 // components
 import GridHeader from './components/header/header';
 import Map from './components/map/map';
+import PlaceHolder from './components/placeholder/placeholder';
 
 const App = () => {
   const [cData, setData] = useState();
@@ -25,7 +26,7 @@ const App = () => {
   },[])
 
   if (isLoading) {
-    return <div>loading</div>
+    return <PlaceHolder />
   }
 
   return (
